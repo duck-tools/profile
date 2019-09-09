@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "mocha --require @babel/register --recursive ./src/**/tests/*js"
   },
   "author": "",
   "license": "ISC",
@@ -13,5 +13,12 @@
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "jwks-rsa": "^1.6.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.6.0",
+    "@babel/preset-env": "^7.6.0",
+    "@babel/register": "^7.6.0",
+    "chai": "^4.2.0",
+    "mocha": "^6.2.0"
   }
 }
