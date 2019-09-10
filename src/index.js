@@ -7,7 +7,7 @@ const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
-    jwksRequestsPerMinute: 5
+    jwksRequestsPerMinute: 5,
     jwksUri: ''
   }),
 
@@ -22,6 +22,6 @@ app.use(checkJwt);
 server.applyMiddleware({ app });
 
 const port = process.env.PORT || 3001;
-app.listen(port).then(() => {
+app.listen(port, () => {
   console.log(`Server ready`);
 });

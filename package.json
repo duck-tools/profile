@@ -4,12 +4,14 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "build": "rollup -c rollup.config.js",
+    "start": "node lib/index.js",
     "test": "mocha --require @babel/register --recursive ./src/**/tests/*js"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "apollo-server": "^2.9.3",
+    "apollo-server-express": "^2.9.3",
     "express": "^4.17.1",
     "express-jwt": "^5.3.1",
     "jwks-rsa": "^1.6.0"
@@ -19,6 +21,10 @@
     "@babel/preset-env": "^7.6.0",
     "@babel/register": "^7.6.0",
     "chai": "^4.2.0",
-    "mocha": "^6.2.0"
+    "mocha": "^6.2.0",
+    "rollup": "^1.21.2",
+    "rollup-plugin-babel": "^4.3.3",
+    "rollup-plugin-commonjs": "^10.1.0",
+    "rollup-plugin-node-resolve": "^5.2.0"
   }
 }
