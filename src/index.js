@@ -3,16 +3,20 @@ import jwt from 'express-jwt';
 import jwksRsa from 'jwks-rsa';
 import { server } from './graphql';
 
+if (process.env.NODE_ENV !== 'production') {
+  require('dot-env');
+}
+
 const checkJwt = jwt({
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
     jwksRequestsPerMinute: 5,
-    jwksUri: ''
+    jwksUri: process.env.JWKS_URI
   }),
 
-  audience: '',
-  issuer: '',
+  audience: process.env.AUDIENCE,
+  issuer: process.env.ISSUER,
   algorithms: ['RS256']
 });
 
