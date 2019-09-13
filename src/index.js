@@ -4,7 +4,7 @@ import jwksRsa from 'jwks-rsa';
 import { server } from './graphql';
 
 if (process.env.NODE_ENV !== 'production') {
-  require('dot-env');
+  require('dotenv').config();
 }
 
 const checkJwt = jwt({
