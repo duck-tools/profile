@@ -5,7 +5,7 @@ export const typeDefs = gql`
     me: User
   }
 
-  type User {
+  type User @key(fields: "displayName") {
     displayName: String
     picture: String
   }
@@ -14,7 +14,15 @@ export const typeDefs = gql`
 export const resolvers = {
   Query: {
     me() {
-      return {};
+      return {
+        displayName: 'foo',
+        picture: 'bar'
+      };
+    },
+    User: {
+      __resolveReference(user) {
+        return user;
+      }
     }
   }
 };

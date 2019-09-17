@@ -9,6 +9,7 @@ export default {
     format: 'cjs'
   },
   external: [
+    '@apollo/federation',
     'apollo-server-express',
     'express',
     'express-jwt',

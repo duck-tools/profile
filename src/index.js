@@ -8,6 +8,7 @@ if (process.env.NODE_ENV !== 'production') {
 }
 
 const checkJwt = jwt({
+  credentialsRequired: false,
   secret: jwksRsa.expressJwtSecret({
     cache: true,
     rateLimit: true,
